@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Complete Website Project</title>
-</head>
-<body>
-
-</body>
-</html>
+<?php
+include('links.php');
+?>
+<h1 class="bg-danger">Welcome</h1>
