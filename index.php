@@ -7,6 +7,8 @@ include('links.php');
 <div id="menu" class="container bg-dark">
 <?php include('navbar.php'); ?>
 </div>
-<div id="image" class="container"></div>
+<div id="image" class="container m-auto p-0">
+	<img src="assets/images/banner.jpg" alt="banner" class="img-fluid" style="height:300px; width:100%; margin:0 auto; ">
+</div>
 <div id="content" class="container"></div>
 <footer id="footer"></footer>
