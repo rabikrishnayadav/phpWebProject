@@ -46,6 +46,8 @@ if (isset($_REQUEST['submit'])) {
 		$sqlInsertQuery = "insert into users(username,password,address,gender,education,country,photo) values('$username','$pwd','$address','$gender','$con_arr_to_str','$country','$fileuUrlPath')";
 
 		$sql_query = mysqli_query($con,$sqlInsertQuery);
+
+		header('location:../register.php');
 	}else{
 		echo "File Is Not Valid";
 	}

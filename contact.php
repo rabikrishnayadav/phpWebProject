@@ -14,7 +14,7 @@ if (isset($_REQUEST['submit'])) {
 	// insert data into table
 	$sqlInsertQuery = "insert into contact_data(name,mobile,email,message) values('$name','$number','$email','$message')";
 	$sql = mysqli_query($con, $sqlInsertQuery);
-
+	header('location:contact.php');
 }
 
 ?>
@@ -31,7 +31,7 @@ if (isset($_REQUEST['submit'])) {
 	<div class="row">
 		<div class="col-xl-6">
 	<h3 class="font-weight-bolder text-center">Contact Us</h3>
-			<form method="post" action="" enctype="multipart/data-type">
+			<form method="post" enctype="multipart/data-type">
 				<div class="m-auto p-2 w-50">
 					<div class="form-group">
 						<label for="name">Name:</label>
