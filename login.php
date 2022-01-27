@@ -1,4 +1,4 @@
-<?php include('assets/component/links.php'); ?>
+<?php include('links.php'); ?>
 <header id="header" class="container bg-secondary text-light">
 	<h1 class="text-center p-1">Complete WebSite in PHP</h1>
 	<div class="row">

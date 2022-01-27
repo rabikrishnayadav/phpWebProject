@@ -1,5 +1,5 @@
 <?php
-include('assets/component/links.php');
+include('links.php');
 ?>
 <div>
 	<?php include('assets/component/header.php'); ?>

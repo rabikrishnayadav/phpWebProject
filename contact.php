@@ -1,5 +1,5 @@
 <?php
-include('assets/component/links.php');
+include('links.php');
 include('assets/component/db_con.php');
 
 // getting the form data
