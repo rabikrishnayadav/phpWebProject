@@ -30,22 +30,23 @@
 			</div>
 			<div class="form-group pt-2">
 			Gender: &nbsp;&nbsp;
-			<input type="radio" name="gender">Male &nbsp;&nbsp;
-			<input type="radio" name="gender">Feale &nbsp;&nbsp;
-			<input type="radio" name="gender">Other &nbsp;&nbsp;
+			<input type="radio" name="gender" value="male">&nbsp;Male &nbsp;
+			<input type="radio" name="gender" value="female">&nbsp;Female &nbsp;
+			<input type="radio" name="gender" value="other">&nbsp;Not Say &nbsp;
 			</div>
 			<div class="form-group">
 				Education: &nbsp;
-				<input type="checkbox" name="html">HTML &nbsp;
-				<input type="checkbox" name="html">CSS &nbsp;
-				<input type="checkbox" name="html">JAVASCRIPT &nbsp;
-				<input type="checkbox" name="html">PHP &nbsp;
+				<input type="checkbox" name="education[]" value="html">HTML &nbsp;
+				<input type="checkbox" name="education[]" value="css">CSS &nbsp;
+				<input type="checkbox" name="education[]" value="javascript">JAVASCRIPT &nbsp;
+				<input type="checkbox" name="education[]" value="php">PHP &nbsp;
 			</div>
 			<div class="form-group">
 				Country:&nbsp;
-				<select>
-					<option>Nepal</option>
-					<option>India</option>
+				<select name="country">
+					<option value="">Select Country</option>
+					<option value="nepal">Nepal</option>
+					<option value="india">India</option>
 				</select>
 			</div>
 			<div class="form-group">
