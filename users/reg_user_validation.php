@@ -26,12 +26,28 @@ if (isset($_REQUEST['submit'])) {
 	// file upload directory name
 	$filePathName = '../assets/images/users/'.$fileName;
 
-	// sql query for upload file on dir.
-	$sqlFileUploadDir = move_uploaded_file($fileTmpName, $filePathName);
+	// file url for database
 
-	// data insert into databse
-	$sqlInsertQuery = "insert into users(username,password,address,gender,education,country) values('$username','$pwd','$address','$gender','$con_arr_to_str','$country')";
+	$fileuUrlPath = 'assets/images/users/'.$fileName;
 
-	$sql_query = mysqli_query($con,$sqlInsertQuery);
+	// for image validation
+	$valid_file_extension = array('jpg','jpeg','png','gif');
+
+	$split_str_to_array = explode('.',$fileName); // this will split name and extension
+
+	$fileExtension = strtolower(end($split_str_to_array)); 	// this will give extension name
+
+	if (in_array($fileExtension, $valid_file_extension)) {
+	
+		// sql query for upload file on dir.
+		$sqlFileUploadDir = move_uploaded_file($fileTmpName, $filePathName);
+
+		// data insert into databse
+		$sqlInsertQuery = "insert into users(username,password,address,gender,education,country,photo) values('$username','$pwd','$address','$gender','$con_arr_to_str','$country','$fileuUrlPath')";
+
+		$sql_query = mysqli_query($con,$sqlInsertQuery);
+	}else{
+		echo "File Is Not Valid";
+	}
 }
 
