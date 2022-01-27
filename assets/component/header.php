@@ -4,7 +4,7 @@
 		<div class="col-xl-10">
 		</div>
 		<div class="col-xl-2">
-			<a href="register.php" class="btn btn-success">SignUp</a>
+			<a href="login.php" class="btn btn-success">Login/SignUp</a>
 		</div>
 	</div>
 </header>
