@@ -1,5 +1,22 @@
 <?php
 include('links.php');
+include('db_con.php');
+
+// getting the form data
+
+if (isset($_REQUEST['submit'])) {
+
+	// store the user data on variable
+	$name = $_REQUEST['name'];
+	$number = $_REQUEST['number'];
+	$email = $_REQUEST['email'];
+	$message = $_REQUEST['message'];
+	// insert data into table
+	$sqlInsertQuery = "insert into contact_data(name,mobile,email,message) values('$name','$number','$email','$message')";
+	$sql = mysqli_query($con, $sqlInsertQuery);
+
+}
+
 ?>
 <header id="header" class="container bg-secondary text-light">
 	<h1 class="text-center p-1">Complete WebSite in PHP</h1>
@@ -14,7 +31,7 @@ include('links.php');
 	<div class="row">
 		<div class="col-xl-6">
 	<h3 class="font-weight-bolder text-center">Contact Us</h3>
-			<form method="post" action="#" enctype="multipart/data-type">
+			<form method="post" action="" enctype="multipart/data-type">
 				<div class="m-auto p-2 w-50">
 					<div class="form-group">
 						<label for="name">Name:</label>
@@ -29,7 +46,7 @@ include('links.php');
 						<input type="email" name="email" placeholder="email id" class="form-control" required>
 					</div><br>
 					<div class="form-group">
-						Message:<textarea  cols="30%" rows="5" maxlength="130"></textarea>
+						Message:<textarea  cols="30%" rows="5" maxlength="130" name="message"></textarea>
 					</div><br>
 					<div class="form-group pt-2">
 						<input type="submit" name="submit" value="Submit" class="btn btn-success">
