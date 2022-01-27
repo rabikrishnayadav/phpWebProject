@@ -12,7 +12,6 @@ include('../assets/component/db_con.php');
 			<th>Education</th>
 			<th>Country</th>
 			<th>Photo</th>
-			<th>Action</th>
 		</tr>
 	</thead>
 	<?php
