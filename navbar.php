@@ -15,7 +15,7 @@ include('links.php');
 					<a href="about.php" class="nav-link">About Us</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">Service</a>
+					<a href="services.php" class="nav-link">Service</a>
 				</li>
 				<li class="nav-item">
 					<a href="contact.php" class="nav-link">Contact Us</a>
