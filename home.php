@@ -1,5 +1,7 @@
 <?php
 include('assets/component/links.php');
+include('assets/component/db_con.php');
+error_reporting(0);
 ?>
 <header id="header" class="container bg-secondary text-light">
 	<h1 class="text-center p-1">Complete WebSite in PHP</h1>
@@ -13,4 +15,7 @@ include('assets/component/links.php');
 </header>
 <div id="menu" class="container bg-dark">
 	<?php include('assets/component/navbar.php'); ?>
+</div>
+<div class="container pt-3">
+	<?php include('users/user_list.php'); ?>
 </div>
