@@ -7,10 +7,11 @@ if (isset($_REQUEST['submit'])) {
 	$username = $_REQUEST['username'];
 	$pwd = $_REQUEST['password'];
 	$address = $_REQUEST['address'];
+	$gender = $_REQUEST['gender'];
 
 	// data insert into databse
 
-	$sqlInsertQuery = "insert into users(username,password,address) values('$username','$pwd','$address')";
+	$sqlInsertQuery = "insert into users(username,password,address,gender) values('$username','$pwd','$address','$gender')";
 
 	$sql_query = mysqli_query($con,$sqlInsertQuery);
 }
