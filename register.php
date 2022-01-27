@@ -1,4 +1,17 @@
-<?php include('links.php'); ?>
+<?php include('assets/component/links.php'); ?>
+<header id="header" class="container bg-secondary text-light">
+	<h1 class="text-center p-1">Complete WebSite in PHP</h1>
+	<div class="row">
+		<div class="col-xl-10">
+		</div>
+		<div class="col-xl-2">
+			<a href="login.php" class="btn btn-success">Login</a>
+		</div>
+	</div>
+</header>
+<div id="menu" class="container bg-dark">
+	<?php include('assets/component/navbar.php'); ?>
+</div>
 <div class="container w-50">
 	<form method="post" action="#" enctype="multipart/data-type">
 		<div class="m-auto p-2 w-50">
@@ -45,4 +58,7 @@
 			</div>
 		</div>
 	</form>
+</div>
+<div>
+	<?php include('assets/component/footer.php'); ?>
 </div>

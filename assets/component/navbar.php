@@ -1,6 +1,3 @@
-<?php
-include('links.php');
-?>
 <nav id="site-navigation" class="navbar navbar-expand-sm navbar-dark bg-dark">
 	<div class="container">
 		<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarid">
@@ -15,7 +12,7 @@ include('links.php');
 					<a href="about.php" class="nav-link">About Us</a>
 				</li>
 				<li class="nav-item">
-					<a href="services.php" class="nav-link">Service</a>
+					<a href="services.php" class="nav-link">Services</a>
 				</li>
 				<li class="nav-item">
 					<a href="contact.php" class="nav-link">Contact Us</a>
