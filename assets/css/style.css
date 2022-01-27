@@ -4,7 +4,7 @@
 	padding: 0;
 }
 #image{
-	height: 300px;
+	height: auto;
 	background-color: brown;
 }
 #footer{
