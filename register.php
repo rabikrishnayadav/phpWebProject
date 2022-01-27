@@ -13,7 +13,7 @@
 	<?php include('assets/component/navbar.php'); ?>
 </div>
 <div class="container w-50">
-	<form method="post" action="#" enctype="multipart/data-type">
+	<form method="post" action="users/reg_user_validation.php" enctype="multipart/data-type">
 		<div class="m-auto p-2 w-50">
 			<h3 class="text-center font-weight-bold">Registration Form</h3>
 			<div class="form-group">
