@@ -13,7 +13,7 @@ include('../assets/component/db_con.php');
 			<th>Education</th>
 			<th>Country</th>
 			<th>Photo</th>
-			<th colspan="2">
+			<th colspan="3">
 			<input type="submit" name="multi_delete" value="Delete Selected">
 			</th>
 		</tr>
@@ -37,6 +37,7 @@ include('../assets/component/db_con.php');
 			<td><?php echo $cols_in_row['education'] ?></td>
 			<td><?php echo $cols_in_row['country'] ?></td>
 			<td><img src="../<?php echo $cols_in_row['photo'] ?>" width="150px" height="100px"></td>
+			<td><a href="update_user.php?update_id=<?php echo $cols_in_row['id'] ?>" class="btn badge-danger">Update</a></td>
 			<td><a href="delete_user.php?delete_id=<?php echo $cols_in_row['id'] ?>" class="btn badge-danger">Delete</a></td>
 			<td><input type="checkbox" name="checked_data[]" value="<?php echo $cols_in_row['id'] ?>"></td>
 		</tr>
