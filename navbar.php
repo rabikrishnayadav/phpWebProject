@@ -9,13 +9,13 @@ include('links.php');
 		<div class="collapse navbar-collapse" id="navbarid">
 			<ul class="navbar-nav text-center m-auto">
 				<li class="nav-item">
-					<a href="#" class="nav-link">Home</a>
+					<a href="index.php" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="about.php" class="nav-link">About Us</a>
 				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link">Service</a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link">About Us</a>
 				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link">Contact Us</a>
