@@ -19,8 +19,9 @@ if (isset($_REQUEST['submit'])) {
 	$username = $_REQUEST['username'];
 	$pwd = $_REQUEST['password'];
 	$address = $_REQUEST['address'];
+	$country = $_REQUEST['country'];
 
-	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address' where id='$updata_data'";
+	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address', country='$country' where id='$updata_data'";
 
 	$sql_query = mysqli_query($con,$sqlInsertQuery);
 
@@ -71,8 +72,20 @@ if (isset($_REQUEST['submit'])) {
 				Country:&nbsp;
 				<select name="country">
 					<option value="">Select Country</option>
-					<option value="nepal">Nepal</option>
-					<option value="india">India</option>
+					<option value="nepal"
+					<?php 
+					if ($result['country'] == 'nepal') {
+						echo 'selected';
+					}
+					?>
+					>Nepal</option>
+					<option value="india"
+					<?php 
+					if ($result['country'] == 'india') {
+						echo 'selected';
+					}
+					?>
+					>India</option>
 				</select>
 			</div>
 			<div class="form-group">
