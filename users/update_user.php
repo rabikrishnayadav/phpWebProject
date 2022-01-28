@@ -9,6 +9,12 @@ $sqlSearchQuery = "select * from users where id='$updata_data'";
 $sql_query = mysqli_query($con,$sqlSearchQuery);
 
 $result = mysqli_fetch_array($sql_query);
+
+// for checked box data show
+$checked_data = $result['education']; // here all data will come in string
+
+$checked_edu = explode(',', $checked_data); // this will convert string to array
+
 }
 
 // set new value
@@ -21,8 +27,12 @@ if (isset($_REQUEST['submit'])) {
 	$address = $_REQUEST['address'];
 	$gender = $_REQUEST['gender'];
 	$country = $_REQUEST['country'];
+	$education = $_REQUEST['education'];
 
-	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address', gender='$gender', country='$country' where id='$updata_data'";
+	// checkbox data will come in array for so convert it into string for storing in database
+	$con_arr_to_str  = implode(',', $education);
+
+	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address', gender='$gender', education='$con_arr_to_str', country='$country' where id='$updata_data'";
 
 	$sql_query = mysqli_query($con,$sqlInsertQuery);
 
@@ -82,10 +92,34 @@ if (isset($_REQUEST['submit'])) {
 			</div>
 			<div class="form-group">
 				Education: &nbsp;
-				<input type="checkbox" name="education[]" value="html">HTML &nbsp;
-				<input type="checkbox" name="education[]" value="css">CSS &nbsp;
-				<input type="checkbox" name="education[]" value="javascript">JAVASCRIPT &nbsp;
-				<input type="checkbox" name="education[]" value="php">PHP &nbsp;
+				<input type="checkbox" name="education[]" value="html"
+				<?php 
+				if (in_array('html',$checked_edu)) {
+					echo 'checked';
+				}
+				?>
+				>HTML &nbsp;
+				<input type="checkbox" name="education[]" value="css"
+				<?php 
+				if (in_array('css',$checked_edu)) {
+					echo 'checked';
+				}
+				?>
+				>CSS &nbsp;
+				<input type="checkbox" name="education[]" value="javascript"
+				<?php 
+				if (in_array('javascript',$checked_edu)) {
+					echo 'checked';
+				}
+				?>
+				>JAVASCRIPT &nbsp;
+				<input type="checkbox" name="education[]" value="php"
+				<?php 
+				if (in_array('php',$checked_edu)) {
+					echo 'checked';
+				}
+				?>
+				>PHP &nbsp;
 			</div>
 			<div class="form-group">
 				Country:&nbsp;
