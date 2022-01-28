@@ -19,9 +19,10 @@ if (isset($_REQUEST['submit'])) {
 	$username = $_REQUEST['username'];
 	$pwd = $_REQUEST['password'];
 	$address = $_REQUEST['address'];
+	$gender = $_REQUEST['gender'];
 	$country = $_REQUEST['country'];
 
-	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address', country='$country' where id='$updata_data'";
+	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address', gender='$gender', country='$country' where id='$updata_data'";
 
 	$sql_query = mysqli_query($con,$sqlInsertQuery);
 
@@ -57,9 +58,27 @@ if (isset($_REQUEST['submit'])) {
 			</div>
 			<div class="form-group pt-2">
 			Gender: &nbsp;&nbsp;
-			<input type="radio" name="gender" value="male">&nbsp;Male &nbsp;
-			<input type="radio" name="gender" value="female">&nbsp;Female &nbsp;
-			<input type="radio" name="gender" value="other">&nbsp;Not Say &nbsp;
+			<input type="radio" name="gender" value="male"
+			<?php 
+			if ($result['gender'] == 'male') {
+				echo 'checked';
+			}
+			?>
+			>&nbsp;Male &nbsp;
+			<input type="radio" name="gender" value="female"
+			<?php 
+			if ($result['gender'] == 'female') {
+				echo 'checked';
+			}
+			?>
+			>&nbsp;Female &nbsp;
+			<input type="radio" name="gender" value="other"
+			<?php 
+			if ($result['gender'] == 'other') {
+				echo 'checked';
+			}
+			?>
+			>&nbsp;Not Say &nbsp;
 			</div>
 			<div class="form-group">
 				Education: &nbsp;
