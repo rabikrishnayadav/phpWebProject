@@ -32,9 +32,49 @@ if (isset($_REQUEST['submit'])) {
 	// checkbox data will come in array for so convert it into string for storing in database
 	$con_arr_to_str  = implode(',', $education);
 
-	$sqlInsertQuery = "update users set username='$username',password='$pwd',address='$address', gender='$gender', education='$con_arr_to_str', country='$country' where id='$updata_data'";
+	$fileName = $_FILES['photo']['name'];
+	$fileTmpName = $_FILES['photo']['tmp_name'];
 
-	$sql_query = mysqli_query($con,$sqlInsertQuery);
+	// file upload directory name
+	$filePathName = '../assets/images/users/'.$fileName;
+
+	// file url for database
+	$fileuUrlPath = 'assets/images/users/'.$fileName;
+
+	// for image validation
+	$valid_file_extension = array('jpg','jpeg','png','gif');
+
+	$split_str_to_array = explode('.',$fileName); // this will split name and extension
+
+	$fileExtension = strtolower(end($split_str_to_array)); 	// this will give extension name
+
+	if (in_array($fileExtension, $valid_file_extension)) {
+	
+		// sql query for upload file on dir.
+		$sqlFileUploadDir = move_uploaded_file($fileTmpName, $filePathName);
+
+		// for delete old image
+
+		$sqlSearchQuery = "select * from users where id='$updata_data'";
+
+		$sql_query = mysqli_query($con,$sqlSearchQuery);
+
+		$cols_data = mysqli_fetch_array($sql_query);
+		
+		unlink("../".$cols_data['photo']);
+
+		$sqlUpdateQuery = "update users set username='$username',password='$pwd',address='$address', gender='$gender', education='$con_arr_to_str', country='$country', photo='$fileuUrlPath' where id='$updata_data'";
+
+		$sql_query = mysqli_query($con,$sqlUpdateQuery);
+
+		header('location:user_list.php');
+	}else{
+		echo "File Is Not Valid";
+	}
+
+	$sqlUpdateQuery = "update users set username='$username',password='$pwd',address='$address', gender='$gender', education='$con_arr_to_str', country='$country' where id='$updata_data'";
+
+	$sql_query = mysqli_query($con,$sqlUpdateQuery);
 
 	header('location:user_list.php');
 }
@@ -141,8 +181,9 @@ if (isset($_REQUEST['submit'])) {
 					>India</option>
 				</select>
 			</div>
-			<div class="form-group">
-				Upload Image: &nbsp;
+			<div class="form-group"><br>Old Image:
+				<img src="../<?php echo $result['photo'] ?>" width="150px" height="100px"><br>
+				Upload New Image: &nbsp;
 				<input type="file" name="photo">
 			</div>
 			<div class="form-group pt-2">
