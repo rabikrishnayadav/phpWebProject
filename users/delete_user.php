@@ -4,6 +4,14 @@ if (isset($_GET['delete_id'])) {
 
 	$delete_req = $_GET['delete_id'];
 
+	$sqlSearchQuery = "select * from users where id='$delete_req'";
+
+	$sql_query = mysqli_query($con,$sqlSearchQuery);
+
+	$cols_data = mysqli_fetch_array($sql_query);
+		
+	unlink("../".$cols_data['photo']);
+
 	$sqlDeleteQuery = "delete from users where id='$delete_req'";
 
 	$sql_query = mysqli_query($con,$sqlDeleteQuery);
